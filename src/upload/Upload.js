@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Upload.css'
 import uploadLogo from './upload-logo.svg'
-import Process from "../process/Process.js";
+
 
 class Upload extends React.Component{
   constructor(props){
@@ -27,11 +27,13 @@ class Upload extends React.Component{
   })}
 
   uploadFile() {
+      const formData = new FormData();
+      formData.append('zipFile',this.state.file);
     fetch('http://localhost:8080/upload', {
       // content-type header should not be specified!
       mode: 'no-cors',
       method: 'POST',
-      body: this.state.file
+      body: formData
     })
       .then(response => response.json())
       .then(success => {
