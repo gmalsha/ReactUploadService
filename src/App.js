@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import "./App.css";
 import Upload from "./upload/Upload";
+
 
 
 class App extends React.Component{
@@ -8,7 +9,8 @@ class App extends React.Component{
    return(
       <div className="App">
         <header className="App-header">Zip-File Content Processor</header>
-        <di className="Upload"><Upload/></di>
+        <div className="Upload"><Upload/></div>
+       
      </div>
     );
   }
